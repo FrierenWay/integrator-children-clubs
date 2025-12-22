@@ -1,30 +1,24 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <v-app shadow>
+    <v-app-bar color="primary" elevation="2">
+      <v-app-bar-title>Интегратор кружков</v-app-bar-title>
+      <v-spacer></v-spacer>
+      <v-btn to="/" variant="text">Главная</v-btn>
+      <v-btn to="/profile" variant="text">Кабинет</v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <router-view />
+    </v-main>
+
+    <v-footer class="bg-grey-lighten-3 justify-center">
+      <div>{{ new Date().getFullYear() }} — <strong>Детские Кружки</strong></div>
+    </v-footer>
+  </v-app>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<script>
+export default {
+  name: 'App'
+};
+</script>

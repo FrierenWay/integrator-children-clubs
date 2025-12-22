@@ -1,5 +1,16 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store';
+import vuetify from './plugins/vuetify';
 
-createApp(App).mount('#app')
+// Подключение иконки Material Design Icons
+import '@mdi/font/css/materialdesignicons.css';
+
+const app = createApp(App);
+
+app.use(router);
+app.use(store);
+app.use(vuetify);
+
+app.mount('#app');
