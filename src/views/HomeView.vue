@@ -60,7 +60,7 @@
 <script>
 import { computed, onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
-import CircleCard from '@/components/CircleCard.vue';
+import CircleCard from '../components/CircleCard.vue';
 
 export default {
   components: { CircleCard },
