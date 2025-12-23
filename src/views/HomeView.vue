@@ -54,6 +54,16 @@
         <p class="text-h6 text-grey">Кружки не найдены. Попробуйте изменить фильтры.</p>
       </v-col>
     </v-row>
+
+    <v-btn-toggle v-model="viewMode" color="primary" mandatory class="mb-4">
+      <v-btn value="list" prepend-icon="mdi-view-grid">Список</v-btn>
+      <v-btn value="map" prepend-icon="mdi-map">Карта</v-btn>
+    </v-btn-toggle>
+
+    <div v-if="viewMode === 'map' && !loading">
+      <app-map :circles="circles" />
+    </div>
+    <v-row v-if="viewMode === 'list' && !loading"></v-row>
   </v-container>
 </template>
 
