@@ -71,13 +71,15 @@
 import { computed, onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
 import CircleCard from '../components/CircleCard.vue';
+import AppMap from '../components/AppMap.vue';
 
 export default {
-  components: { CircleCard },
+  components: { CircleCard, AppMap },
   setup() {
     const store = useStore();
 
     // Локальные реактивные переменные для фильтров
+    const viewMode = ref('list');
     const search = ref('');
     const category = ref(null);
     const maxPrice = ref(10000);
@@ -105,6 +107,7 @@ export default {
       circles,
       loading,
       categories,
+      viewMode,
       updateFilters
     };
   }
